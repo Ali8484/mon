@@ -1,38 +1,59 @@
-import React from 'react';
-import {Text , View , Button } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import React from 'react' ;
+import {Text , View } from 'react-native ' ;
+import {TabNavigator} from 'react-navigation' ;
 
-const HomeScreen =({navigation}) => (
-  <View>
-      <Text>
-          This is the home 
-        </Text>
-        <Button onPress={() => navigation.navigate('Details')} 
-        title="PUSH IT"
-        />
-    </View>
-);
-const DetailsScreen =() => (
+const HomeScreen = () => (
   <View>
     <Text>
-      Yes !!! ... YOU ARE WELCOME
+      HOMYYYYYYY
       </Text>
     </View>
 );
-
-const Root = StackNavigator({
-
+const SecondScreen =() => (
+  <View>
+      <Text>
+        SECONDALYYYYYY
+      </Text>
+    </View>
+);
+const ThirdScreen =() => (
+  <View>
+      <Text>
+        THIRDYYYYYY
+        </Text>
+    </View>
+);
+//const FourthScreen =() => (
+//  <View>
+  //    <Text>
+//      FOURTHYYYYYY
+  //    </Text>
+     //     </View>
+//);
+const Root = TabNavigator ({
   Home : {
     screen : HomeScreen ,
-    navigationOptions :{
-      headerTitle : "Homy"
+    navigationOptions : {
+      headertitle : 'HOME',
     },
   },
-  Details : {
-    screen : DetailsScreen ,
-    navigationOptions :{
-      headerTitle : "Detaily"
+  Second : {
+    screen : SecondScreen ,
+    navigationOptions : {
+      headertitle : 'SECOND',
     },
   },
+  Third :{
+    screen : ThirdScreen ,
+    navigationOptions :{
+      headertitle : 'THIRD'
+    },
+  },
+ // Fourth : {
+  //  screen : FourthScreen , 
+ //   navigationOptions : {
+ //     headertitle : 'FOURTH',
+//    },
+//  },
 });
 export default Root ;
